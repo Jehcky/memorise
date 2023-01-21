@@ -1,2 +1,2 @@
 # memorise
-A simple Python memory game 
+A simple Python memory game using Pygame
