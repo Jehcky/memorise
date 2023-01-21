@@ -10,15 +10,24 @@ def main():
     pygame.init()
     window_size = window_width, window_height = 800, 600
     pygame.display.set_caption("Memorise")
-    intro_img = pygame.image.load(os.path.join('img','intro.png'))
-    screen.blit(intro_img,(80,60))
-    pygame.display.flip()
+    game_menu()
 
     # Infinite loop 'til user choose to quit the game
     while (True):
         for event in pygame.event.get():
+            print(event)
             if event.type == pygame.QUIT:
                 sys.exit()
+            if event.type == pygame.K_ESCAPE:
+                game_menu()
+            
+def options_menu():
+    print("This is here so I don't get an error")
+
+def game_menu():
+    intro_img = pygame.image.load(os.path.join('img','intro.png'))
+    screen.blit(intro_img,(80,60))
+    pygame.display.update()
 
 class Memorise:
     def __init__(self, surface):
